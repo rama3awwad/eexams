@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معهد ابن حيَّان - Upload Excel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #017371; /* Teal */
+            color: #fff;
+            padding: 40px; /* Increased padding for a larger header area */
+            text-align: center;
+        }
+        header h2 {
+            font-size: 2.5em; /* Larger font size for معهد ابن حيان */
+            margin: 0;
+        }
+        .container {
+            margin: 40px auto;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #017371; /* Teal */
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: black; /* Black for the label */
+        }
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #017371; /* Teal */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #015d5b; /* Slightly darker Teal for hover effect */
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
+            color: #017371; /* Teal */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>معهد ابن حيَّان</h2>
+    </header>
+    
+    <div class="container">
+        <h1>Upload Quiz Data</h1>
+        <form id="uploadForm" action="/api/upload-excel" method="POST" enctype="multipart/form-data">
+            <label for="file">Choose Excel File (Format: .xlsx)</label>
+            <input type="file" name="file" id="file" accept=".xlsx" required>
+
+            <button type="submit">Upload File</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2024 معهد ابن حيان. All Rights Reserved.
+    </footer>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            const fileInput = document.getElementById('file');
+            if (!fileInput.files.length) {
+                e.preventDefault();
+                alert('Please select a file before submitting.');
+            }
+        });
+    </script>
+</body>
+</html>
