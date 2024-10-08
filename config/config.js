@@ -4,7 +4,8 @@ const config = {
   development: {
     database: process.env.DB_NAME || 'exams',
     username: process.env.DB_USER || 'postgres',
-    password: process.env.DB_PASS  || 'ramarama30',
+    // password: process.env.DB_PASS  || 'ramarama30',
+    password: 'UherT5W6bcy1TpccC6SUxGsoCPnVx7Bk',
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 5432,
     dialect: 'postgres',
@@ -12,7 +13,7 @@ const config = {
   test: {
     database: process.env.TEST_DB_NAME || 'test_exams',
     username: process.env.TEST_DB_USER || 'postgres',
-    password: process.env.DB_PASS  || 'ramarama30',
+    password: 'UherT5W6bcy1TpccC6SUxGsoCPnVx7Bk',
     host: process.env.TEST_DB_HOST || 'localhost',
     port: process.env.TEST_DB_PORT || 5432,
     dialect: 'postgres',
